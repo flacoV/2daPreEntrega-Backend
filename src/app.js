@@ -2,10 +2,10 @@ import express from 'express';
 import { __dirname } from './utils.js';
 import handlebars from 'express-handlebars';
 import { Server } from 'socket.io'
-
 import routerP from './routes/products.router.js';
 import routerV from './routes/views.router.js';
 import socketProducts from './listeners/socketProducts.js';
+import connectToDB from './config/configServer.js'
 
 
 const app = express();
@@ -21,6 +21,7 @@ app.set('view engine', 'handlebars');
 app.use('/api', routerP)
 app.use('/', routerV)
 
+connectToDB()
 const httpServer = app.listen(PORT, () => {
     try {
         console.log(`Server is running on port ${PORT}\n Acceder a:`);
