@@ -1,7 +1,7 @@
 <div class="container mt-5">
     <div class="d-flex p-4 justify-content-center">
         <h1 class="text-center mb-4">PRODUCTOS</h1>
-        <button>CART</button>
+        <a id="cartButton" href="/cart">CART</a>
     </div>
     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
         {{#each listadeproductos}}
@@ -24,7 +24,7 @@
                                 class="img-fluid mt-2">
                         </li>
                         <div class="d-flex p-2 justify-content-center">
-                            <button>Add to Cart</button>
+                            <button onclick="addToCart('{{this._id}}')">Add to Cart</button>
                         </div>
                     </ul>
                 </div>
@@ -33,3 +33,5 @@
         {{/each}}
     </div>
 </div>
+
+<script src="/js/home.js"></script>

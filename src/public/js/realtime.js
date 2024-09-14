@@ -1,4 +1,4 @@
-const socketClient=io()
+const socketClient=io('/realtimeproducts');
 
 socketClient.on("enviodeproducts",(obj)=>{
     updateProductList(obj)
